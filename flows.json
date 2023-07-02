@@ -1,0 +1,678 @@
+[
+    {
+        "id": "c95952eb6bc2897b",
+        "type": "tab",
+        "label": "Leitor_de_Corrente",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "f02a439c5803befc",
+        "type": "mqtt in",
+        "z": "c95952eb6bc2897b",
+        "name": "",
+        "topic": "corrente/fase1",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "d5d12310b599e4a3",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 90,
+        "y": 120,
+        "wires": [
+            [
+                "44a23dbc173325af",
+                "21c18a9799f8281a",
+                "785b70690c6c378e",
+                "3709c89fb8a813ea",
+                "63876782a3c85a80"
+            ]
+        ]
+    },
+    {
+        "id": "52d533d7544e506f",
+        "type": "mqtt out",
+        "z": "c95952eb6bc2897b",
+        "d": true,
+        "name": "",
+        "topic": "leitura/corrente_1",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "d5d12310b599e4a3",
+        "x": 930,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "44a23dbc173325af",
+        "type": "ui_numeric",
+        "z": "c95952eb6bc2897b",
+        "name": "",
+        "label": "CORRENTE R",
+        "tooltip": "",
+        "group": "4558cdde840505f8",
+        "order": 2,
+        "width": 6,
+        "height": 3,
+        "wrap": false,
+        "passthru": false,
+        "topic": "leitura/corrente_1",
+        "topicType": "msg",
+        "format": "{{value}} A",
+        "min": 0,
+        "max": "1000",
+        "step": "0.01",
+        "className": "",
+        "x": 360,
+        "y": 120,
+        "wires": [
+            [
+                "40a3b741742a3c5a"
+            ]
+        ]
+    },
+    {
+        "id": "40a3b741742a3c5a",
+        "type": "debug",
+        "z": "c95952eb6bc2897b",
+        "name": "debug 3",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 700,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "f51b722c7abc5db6",
+        "type": "mqtt in",
+        "z": "c95952eb6bc2897b",
+        "name": "",
+        "topic": "corrente/fase2",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "d5d12310b599e4a3",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 110,
+        "y": 340,
+        "wires": [
+            [
+                "025a98291d11471a",
+                "1dd09f19865690a9",
+                "cd7c4fb4bde3019e",
+                "9e0bbcc9a4109406",
+                "5b0b79d8c770b830"
+            ]
+        ]
+    },
+    {
+        "id": "1642f7093199d297",
+        "type": "mqtt out",
+        "z": "c95952eb6bc2897b",
+        "d": true,
+        "name": "",
+        "topic": "leitura/corrente_2",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "d5d12310b599e4a3",
+        "x": 930,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "025a98291d11471a",
+        "type": "ui_numeric",
+        "z": "c95952eb6bc2897b",
+        "name": "",
+        "label": "CORRENTE S",
+        "tooltip": "",
+        "group": "8c7f394f9880e7eb",
+        "order": 2,
+        "width": 6,
+        "height": 3,
+        "wrap": false,
+        "passthru": false,
+        "topic": "leitura/corrente_2",
+        "topicType": "msg",
+        "format": "{{value}} A",
+        "min": 0,
+        "max": "1000",
+        "step": "0.01",
+        "className": "",
+        "x": 360,
+        "y": 360,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1dd09f19865690a9",
+        "type": "ui_chart",
+        "z": "c95952eb6bc2897b",
+        "name": "",
+        "group": "8c7f394f9880e7eb",
+        "order": 6,
+        "width": 20,
+        "height": 3,
+        "label": "CARGA 2",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "6",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 340,
+        "y": 420,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "21c18a9799f8281a",
+        "type": "ui_chart",
+        "z": "c95952eb6bc2897b",
+        "name": "",
+        "group": "4558cdde840505f8",
+        "order": 6,
+        "width": 21,
+        "height": 3,
+        "label": "CARGA 1",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "6",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 340,
+        "y": 180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5c403ce21b19a664",
+        "type": "mysql",
+        "z": "c95952eb6bc2897b",
+        "mydb": "e28b9ab1c77a7491",
+        "name": "",
+        "x": 530,
+        "y": 480,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "cd7c4fb4bde3019e",
+        "type": "function",
+        "z": "c95952eb6bc2897b",
+        "name": "insert",
+        "func": "var insert = \"INSERT INTO dispositivo (corrente,fase) VALUES (\"+msg.payload+\",2);\"\nmsg.topic = insert;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 330,
+        "y": 480,
+        "wires": [
+            [
+                "5c403ce21b19a664"
+            ]
+        ]
+    },
+    {
+        "id": "785b70690c6c378e",
+        "type": "function",
+        "z": "c95952eb6bc2897b",
+        "name": "insert",
+        "func": "var insert = \"INSERT INTO dispositivo (corrente,fase) VALUES (\"+msg.payload+\",1);\"\nmsg.topic = insert;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 330,
+        "y": 220,
+        "wires": [
+            [
+                "d20fd9b49dccab4f"
+            ]
+        ]
+    },
+    {
+        "id": "d20fd9b49dccab4f",
+        "type": "mysql",
+        "z": "c95952eb6bc2897b",
+        "mydb": "e28b9ab1c77a7491",
+        "name": "",
+        "x": 530,
+        "y": 220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6e951b68829afd2d",
+        "type": "ui_table",
+        "z": "c95952eb6bc2897b",
+        "group": "8c7f394f9880e7eb",
+        "name": "FASE 2",
+        "order": 7,
+        "width": 0,
+        "height": 0,
+        "columns": [
+            {
+                "field": "fase",
+                "title": "Fase",
+                "width": "20%",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "corrente",
+                "title": "Corrente",
+                "width": "30%",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "registro_data",
+                "title": "Registro",
+                "width": "50%",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            }
+        ],
+        "outputs": 0,
+        "cts": false,
+        "x": 720,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "9e145385d035d038",
+        "type": "debug",
+        "z": "c95952eb6bc2897b",
+        "name": "debug 5",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 720,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "fd9b585dd56bcdb4",
+        "type": "mysql",
+        "z": "c95952eb6bc2897b",
+        "mydb": "e28b9ab1c77a7491",
+        "name": "",
+        "x": 530,
+        "y": 540,
+        "wires": [
+            [
+                "6e951b68829afd2d"
+            ]
+        ]
+    },
+    {
+        "id": "9e0bbcc9a4109406",
+        "type": "function",
+        "z": "c95952eb6bc2897b",
+        "name": "select",
+        "func": "var select = \"SELECT CONCAT(corrente,' A') as corrente,  CONCAT(DATE(registro),' ',TIME(registro)) as registro_data,fase FROM dispositivo WHERE fase = 2 ORDER BY id DESC LIMIT 5;\"\nmsg.topic = select;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 330,
+        "y": 540,
+        "wires": [
+            [
+                "fd9b585dd56bcdb4"
+            ]
+        ]
+    },
+    {
+        "id": "e45ce270bcc13346",
+        "type": "ui_table",
+        "z": "c95952eb6bc2897b",
+        "group": "4558cdde840505f8",
+        "name": "FASE 1",
+        "order": 7,
+        "width": 0,
+        "height": 0,
+        "columns": [
+            {
+                "field": "fase",
+                "title": "Fase",
+                "width": "20%",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "corrente",
+                "title": "Corrente",
+                "width": "30%",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "registro_data",
+                "title": "Registro",
+                "width": "50%",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            }
+        ],
+        "outputs": 0,
+        "cts": false,
+        "x": 720,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "ffd2e6913911ef7d",
+        "type": "mysql",
+        "z": "c95952eb6bc2897b",
+        "mydb": "e28b9ab1c77a7491",
+        "name": "",
+        "x": 530,
+        "y": 280,
+        "wires": [
+            [
+                "e45ce270bcc13346"
+            ]
+        ]
+    },
+    {
+        "id": "3709c89fb8a813ea",
+        "type": "function",
+        "z": "c95952eb6bc2897b",
+        "name": "select",
+        "func": "var select = \"SELECT CONCAT(corrente,' A') as corrente,  CONCAT(DATE(registro),' ',TIME(registro)) as registro_data,fase FROM dispositivo WHERE fase = 1 ORDER BY id DESC LIMIT 5;\"\nmsg.topic = select;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 330,
+        "y": 280,
+        "wires": [
+            [
+                "ffd2e6913911ef7d"
+            ]
+        ]
+    },
+    {
+        "id": "63876782a3c85a80",
+        "type": "ui_gauge",
+        "z": "c95952eb6bc2897b",
+        "name": "",
+        "group": "4558cdde840505f8",
+        "order": 1,
+        "width": 6,
+        "height": 3,
+        "gtype": "gage",
+        "title": "Corrente I",
+        "label": "A",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "40",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 340,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "5b0b79d8c770b830",
+        "type": "ui_gauge",
+        "z": "c95952eb6bc2897b",
+        "name": "",
+        "group": "8c7f394f9880e7eb",
+        "order": 1,
+        "width": 6,
+        "height": 3,
+        "gtype": "gage",
+        "title": "Corrente II",
+        "label": "A",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "40",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 370,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "5626919c4862a97c",
+        "type": "ui_spacer",
+        "z": "c95952eb6bc2897b",
+        "name": "spacer",
+        "group": "4558cdde840505f8",
+        "order": 3,
+        "width": 9,
+        "height": 1
+    },
+    {
+        "id": "c919f61b59892c71",
+        "type": "ui_spacer",
+        "z": "c95952eb6bc2897b",
+        "name": "spacer",
+        "group": "4558cdde840505f8",
+        "order": 4,
+        "width": 9,
+        "height": 1
+    },
+    {
+        "id": "3bdca28759c11aee",
+        "type": "ui_spacer",
+        "z": "c95952eb6bc2897b",
+        "name": "spacer",
+        "group": "4558cdde840505f8",
+        "order": 5,
+        "width": 9,
+        "height": 1
+    },
+    {
+        "id": "2bbebd551161da14",
+        "type": "ui_spacer",
+        "z": "c95952eb6bc2897b",
+        "name": "spacer",
+        "group": "8c7f394f9880e7eb",
+        "order": 3,
+        "width": 8,
+        "height": 1
+    },
+    {
+        "id": "fb07e4ffbe158a31",
+        "type": "ui_spacer",
+        "z": "c95952eb6bc2897b",
+        "name": "spacer",
+        "group": "8c7f394f9880e7eb",
+        "order": 4,
+        "width": 8,
+        "height": 1
+    },
+    {
+        "id": "c46c4311591666d2",
+        "type": "ui_spacer",
+        "z": "c95952eb6bc2897b",
+        "name": "spacer",
+        "group": "8c7f394f9880e7eb",
+        "order": 5,
+        "width": 8,
+        "height": 1
+    },
+    {
+        "id": "d5d12310b599e4a3",
+        "type": "mqtt-broker",
+        "name": "espClient",
+        "broker": "177.54.197.236",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "4558cdde840505f8",
+        "type": "ui_group",
+        "name": "FASE1",
+        "tab": "ea1d1efbc84dcdd7",
+        "order": 2,
+        "disp": true,
+        "width": "21",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "8c7f394f9880e7eb",
+        "type": "ui_group",
+        "name": "FASE2",
+        "tab": "ea1d1efbc84dcdd7",
+        "order": 3,
+        "disp": true,
+        "width": "20",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "e28b9ab1c77a7491",
+        "type": "MySQLdatabase",
+        "name": "",
+        "host": "192.168.1.6",
+        "port": "3306",
+        "db": "prototipoiot",
+        "tz": "00:00",
+        "charset": "utf8mb4"
+    },
+    {
+        "id": "ea1d1efbc84dcdd7",
+        "type": "ui_tab",
+        "name": "Leitor de corrente",
+        "icon": "dashboard",
+        "order": 4,
+        "disabled": false,
+        "hidden": false
+    }
+]
